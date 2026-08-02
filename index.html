@@ -925,6 +925,7 @@
   <ul class="nav-links">
     <li><a href="#about">Journey</a></li>
     <li><a href="#achievements">Achievements</a></li>
+    <li><a href="#gallery">Gallery</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#ventures">Ventures</a></li>
     <li><a href="#research">Research</a></li>
@@ -1155,9 +1156,116 @@
   </div>
 </section>
 
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="section-label">// 04 — GALLERY</div>
+  <h2 class="section-title">JOURNEY IN PICTURES</h2>
+  
+  <style>
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 16px;
+      margin-top: 32px;
+    }
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      transition: transform 0.3s ease, border-color 0.3s ease;
+      cursor: pointer;
+    }
+    .gallery-item:hover {
+      border-color: var(--accent);
+      transform: translateY(-4px);
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: grayscale(40%);
+      transition: filter 0.3s ease, transform 0.3s ease;
+    }
+    .gallery-item:hover img {
+      filter: grayscale(0%);
+      transform: scale(1.02);
+    }
+    .gallery-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 12px 16px;
+      background: rgba(10, 10, 10, 0.9);
+      border-top: 1px solid var(--border);
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--muted);
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+    }
+    .gallery-item:hover .gallery-caption {
+      transform: translateY(0);
+    }
+    @media (max-width: 768px) {
+      .gallery-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+      .gallery-item {
+        grid-column: span 12 !important;
+        height: 250px !important;
+      }
+      .gallery-caption {
+        transform: translateY(0);
+        position: relative;
+        background: var(--bg);
+      }
+    }
+  </style>
+
+  <div class="gallery-grid">
+    <div class="gallery-item" style="grid-column: span 6; height: 320px;">
+      <img src="documents/img1.jpeg" alt="NCC Tent Pitching &amp; Drill">
+      <div class="gallery-caption">// NCC DTU · CATC Camp tent pitching team</div>
+    </div>
+    <div class="gallery-item" style="grid-column: span 6; height: 320px;">
+      <img src="documents/img2.jpeg" alt="Ek Bharat Shreshtha Bharat National Camp">
+      <div class="gallery-caption">// EBSB DELHI · Representing DTU at national integration camp</div>
+    </div>
+    <div class="gallery-item" style="grid-column: span 4; height: 380px;">
+      <img src="documents/img3.jpeg" alt="Madhav Bhati Speaking">
+      <div class="gallery-caption">// REPRESENTATIVE · Addressing DTU students and faculty</div>
+    </div>
+    <div class="gallery-item" style="grid-column: span 4; height: 380px;">
+      <img src="documents/img4.jpeg" alt="SIH 2025 Presentation">
+      <div class="gallery-caption">// SIH 2025 · Pitching SolarSiphon feasibility &amp; operations</div>
+    </div>
+    <div class="gallery-item" style="grid-column: span 4; height: 380px;">
+      <img src="documents/img5.jpeg" alt="SIH 2025 Runner-Up Celebration">
+      <div class="gallery-caption">// SIH 2025 · National Runner-Up grand finale award ceremony</div>
+    </div>
+    <div class="gallery-item" style="grid-column: span 4; height: 420px;">
+      <img src="documents/img6.jpeg" alt="Tata AIG Bronze Plus Legends Award">
+      <div class="gallery-caption">// TATA AIG GIANTS · Stage recognition at The Leela Ambience</div>
+    </div>
+    <div class="gallery-item" style="grid-column: span 8; height: 420px;">
+      <img src="documents/img7.jpeg" alt="SAAMANT '26 NCC Fest Stage">
+      <div class="gallery-caption">// SAAMANT FEST · Coordinating stage production and cultural logistics</div>
+    </div>
+    <div class="gallery-item" style="grid-column: span 12; height: 360px;">
+      <img src="documents/img8.jpeg" alt="DTU OAT Crowd Management">
+      <div class="gallery-caption">// OPERATIONS · Crowd control &amp; event execution for 3,000+ at DTU OAT</div>
+    </div>
+  </div>
+</section>
+
 <!-- EXPERIENCE -->
 <section id="experience">
-  <div class="section-label">// 04 — EXPERIENCE</div>
+  <div class="section-label">// 05 — EXPERIENCE</div>
   <h2 class="section-title">WHERE I'VE WORKED</h2>
   <div class="exp-grid">
     <div class="exp-card">
@@ -1202,7 +1310,7 @@
 
 <!-- VENTURES -->
 <section id="ventures">
-  <div class="section-label">// 05 — VENTURES</div>
+  <div class="section-label">// 06 — VENTURES</div>
   <h2 class="section-title">STARTUPS &amp; VENTURES</h2>
   <div class="exp-grid">
     <div class="exp-card">
@@ -1222,7 +1330,7 @@
 
 <!-- RESEARCH -->
 <section id="research">
-  <div class="section-label">// 06 — RESEARCH &amp; WRITING</div>
+  <div class="section-label">// 07 — RESEARCH &amp; WRITING</div>
   <h2 class="section-title">WHAT I'VE STUDIED DEEPLY</h2>
   <div class="research-grid">
     <div class="research-card" data-num="01">
@@ -1260,7 +1368,7 @@
 
 <!-- SKILLS -->
 <section id="skills">
-  <div class="section-label">// 07 — SKILLS &amp; TOOLS</div>
+  <div class="section-label">// 08 — SKILLS &amp; TOOLS</div>
   <h2 class="section-title">WHAT I WORK WITH</h2>
   <div class="skills-layout">
     <div>
@@ -1304,7 +1412,7 @@
 
 <!-- LEADERSHIP -->
 <section id="leadership">
-  <div class="section-label">// 08 — LEADERSHIP</div>
+  <div class="section-label">// 09 — LEADERSHIP</div>
   <h2 class="section-title">HOW I SHOW UP FOR OTHERS</h2>
   <div class="leadership-grid">
     <div class="lead-card">
@@ -1330,7 +1438,7 @@
 
 <!-- PROJECTS -->
 <section id="projects">
-  <div class="section-label">// 09 — PROJECTS</div>
+  <div class="section-label">// 10 — PROJECTS</div>
   <h2 class="section-title">WHAT I'M BUILDING</h2>
   <div class="projects-grid">
     <div class="proj-card">
@@ -1404,7 +1512,7 @@
 
 <!-- CONTACT -->
 <section id="contact">
-  <div class="section-label">// 10 — CONTACT</div>
+  <div class="section-label">// 11 — CONTACT</div>
   <div class="contact-inner">
     <div>
       <h2 class="contact-headline">LET'S <span>CONNECT</span></h2>
