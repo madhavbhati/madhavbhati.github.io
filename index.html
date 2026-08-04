@@ -952,6 +952,7 @@
     <li><a href="#research">Research</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#visualization">3D Design</a></li>
     <li><a href="#contact" class="nav-cta">Contact</a></li>
   </ul>
 </nav>
@@ -1607,9 +1608,299 @@
   </div>
 </section>
 
+</section>
+
+<!-- 3D DESIGN & VISUALIZATION -->
+<section id="visualization">
+  <div class="section-label">// 11 — 3D DESIGN &amp; VISUALIZATION</div>
+  <h2 class="section-title">3D MODELING &amp; VISUALIZATION</h2>
+  
+  <style>
+    .filter-btn {
+      font-family: var(--mono);
+      font-size: 11px;
+      background: transparent;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      padding: 8px 16px;
+      cursor: pointer;
+      transition: all 0.3s;
+      letter-spacing: 0.05em;
+    }
+    .filter-btn:hover, .filter-btn.active {
+      color: #000000;
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+    .model-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+      margin-top: 32px;
+    }
+    .model-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+    .model-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-4px);
+    }
+    .slider-container {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16/10;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+    .slider-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    .slider-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(10, 10, 10, 0.8);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-size: 16px;
+      padding: 6px 10px;
+      cursor: pointer;
+      user-select: none;
+      z-index: 10;
+    }
+    .slider-btn.prev { left: 10px; }
+    .slider-btn.next { right: 10px; }
+    .slider-counter {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      background: rgba(10, 10, 10, 0.8);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-family: var(--mono);
+      font-size: 10px;
+      padding: 2px 6px;
+      z-index: 10;
+    }
+    .model-type-badge {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: rgba(10, 10, 10, 0.8);
+      border: 1px solid var(--border);
+      color: var(--accent);
+      font-family: var(--mono);
+      font-size: 10px;
+      padding: 2px 8px;
+      z-index: 10;
+      letter-spacing: 0.05em;
+    }
+    @media (max-width: 900px) {
+      .model-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+
+  <div class="filter-tabs" style="display: flex; gap: 12px; flex-wrap: wrap; margin: 32px 0 24px 0;">
+    <button class="filter-btn active" onclick="filter3D('all')">All Projects (4)</button>
+    <button class="filter-btn" onclick="filter3D('residential')">Residential (2)</button>
+    <button class="filter-btn" onclick="filter3D('multi-story')">Multi-Story (1)</button>
+    <button class="filter-btn" onclick="filter3D('bim-pro')">Professional BIM (1)</button>
+  </div>
+
+  <div class="model-grid">
+    <!-- Card 1 -->
+    <div class="model-card" data-type="residential">
+      <div class="slider-container">
+        <div class="model-type-badge">01 · RESIDENTIAL PLANNING</div>
+        <img id="proj1-img" src="documents/3d_models/3d_project1.webp" alt="Residential House Preview">
+        <button class="slider-btn prev" onclick="moveSlider('proj1', -1)">&#10094;</button>
+        <button class="slider-btn next" onclick="moveSlider('proj1', 1)">&#10095;</button>
+        <div id="proj1-counter" class="slider-counter">1 / 7</div>
+      </div>
+      <div class="proj-type" style="margin-top: 0;">// GROUND FLOOR LAYOUT | 1393 SQ.FT.</div>
+      <h3 class="proj-title" style="margin: 4px 0 12px 0; font-family: var(--sans); font-size: 18px; font-weight: bold; color: var(--text);">Residential House Planning &amp; Design</h3>
+      
+      <p style="font-size: 13px; color: var(--muted); margin-bottom: 12px;"><strong>Focus:</strong> Space-efficient ground floor layout prioritizing circulation efficiency, daylighting, and privacy zoning.</p>
+      
+      <ul style="list-style: none; padding-left: 0; display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: var(--muted); line-height: 1.5; margin-bottom: 16px; flex-grow: 1;">
+        <li style="position: relative; padding-left: 14px;"><span style="position: absolute; left: 0; color: var(--accent);">•</span> 3 Bedrooms with attached/common bath &amp; drawing room with sit-out.</li>
+        <li style="position: relative; padding-left: 14px;"><span style="position: absolute; left: 0; color: var(--accent);">•</span> Centrally placed dining area with modular kitchen layout.</li>
+        <li style="position: relative; padding-left: 14px;"><span style="position: absolute; left: 0; color: var(--accent);">•</span> Separate prayer room for spiritual zoning with optimized furniture layout.</li>
+      </ul>
+      
+      <div class="proj-tools" style="margin-bottom: 16px;">
+        <span class="ptool">AutoCAD</span>
+        <span class="ptool">ARCHICAD</span>
+        <span class="ptool">Space Planning</span>
+        <span class="ptool">2D Drafting</span>
+      </div>
+      <a href="https://www.linkedin.com/posts/activity-7413589325013151744-tvrp" target="_blank" style="color: var(--accent); text-decoration: none; font-family: var(--mono); font-size: 11px; display: inline-block; letter-spacing: 0.05em; border-bottom: 1px dashed var(--accent);">[ VIEW ON LINKEDIN ↗ ]</a>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="model-card" data-type="multi-story">
+      <div class="slider-container">
+        <div class="model-type-badge">02 · MULTI-STORY DESIGN</div>
+        <img id="proj2-img" src="documents/3d_models/3d_project2.webp" alt="G+3 Building Preview">
+        <button class="slider-btn prev" onclick="moveSlider('proj2', -1)">&#10094;</button>
+        <button class="slider-btn next" onclick="moveSlider('proj2', 1)">&#10095;</button>
+        <div id="proj2-counter" class="slider-counter">1 / 4</div>
+      </div>
+      <div class="proj-type" style="margin-top: 0;">// COMPACT URBAN RESIDENTIAL | 8 X 10 M PLOT</div>
+      <h3 class="proj-title" style="margin: 4px 0 12px 0; font-family: var(--sans); font-size: 18px; font-weight: bold; color: var(--text);">G+3 Multi-Story Building</h3>
+      
+      <p style="font-size: 13px; color: var(--muted); margin-bottom: 12px;"><strong>Focus:</strong> G+3 multi-story residential building engineered on a compact plot, optimizing vertical circulation and facade massing.</p>
+      
+      <ul style="list-style: none; padding-left: 0; display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: var(--muted); line-height: 1.5; margin-bottom: 16px; flex-grow: 1;">
+        <li style="position: relative; padding-left: 14px;"><span style="position: absolute; left: 0; color: var(--accent);">•</span> Accurate 3D massing and contemporary curved facade development.</li>
+        <li style="position: relative; padding-left: 14px;"><span style="position: absolute; left: 0; color: var(--accent);">•</span> Floor-by-floor space planning with central staircase circulation core.</li>
+        <li style="position: relative; padding-left: 14px;"><span style="position: absolute; left: 0; color: var(--accent);">•</span> Window placement optimized for natural daylighting and ventilation.</li>
+      </ul>
+      
+      <div class="proj-tools" style="margin-bottom: 16px;">
+        <span class="ptool">ARCHICAD</span>
+        <span class="ptool">3D Massing</span>
+        <span class="ptool">Facade Design</span>
+        <span class="ptool">Urban Planning</span>
+      </div>
+      <a href="https://www.linkedin.com/posts/activity-7412921761337540608-OzDO" target="_blank" style="color: var(--accent); text-decoration: none; font-family: var(--mono); font-size: 11px; display: inline-block; letter-spacing: 0.05em; border-bottom: 1px dashed var(--accent);">[ VIEW ON LINKEDIN ↗ ]</a>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="model-card" data-type="residential">
+      <div class="slider-container">
+        <div class="model-type-badge">03 · ARCHITECTURAL PLANNING</div>
+        <img id="proj3-img" src="documents/3d_models/3d_project3.webp" alt="3BHK Residential Preview">
+        <button class="slider-btn prev" onclick="moveSlider('proj3', -1)">&#10094;</button>
+        <button class="slider-btn next" onclick="moveSlider('proj3', 1)">&#10095;</button>
+        <div id="proj3-counter" class="slider-counter">1 / 5</div>
+      </div>
+      <div class="proj-type" style="margin-top: 0;">// BIM DOCUMENTATION | 32 X 50 FT PLOT</div>
+      <h3 class="proj-title" style="margin: 4px 0 12px 0; font-family: var(--sans); font-size: 18px; font-weight: bold; color: var(--text);">3BHK Residential Project</h3>
+      
+      <p style="font-size: 13px; color: var(--muted); margin-bottom: 12px;"><strong>Focus:</strong> 3BHK residential house plan delivering regulation-compliant plans and technical BIM documentation.</p>
+      
+      <ul style="list-style: none; padding-left: 0; display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: var(--muted); line-height: 1.5; margin-bottom: 16px; flex-grow: 1;">
+        <li style="position: relative; padding-left: 14px;"><span style="position: absolute; left: 0; color: var(--accent);">•</span> Site-responsive planning separating public, semi-private, and private living zones.</li>
+        <li style="position: relative; padding-left: 14px;"><span style="position: absolute; left: 0; color: var(--accent);">•</span> Standardized room dimensions compliant with local building bylaws.</li>
+        <li style="position: relative; padding-left: 14px;"><span style="position: absolute; left: 0; color: var(--accent);">•</span> BIM documentation linking floor plans, sections, and elevation views.</li>
+      </ul>
+      
+      <div class="proj-tools" style="margin-bottom: 16px;">
+        <span class="ptool">ARCHICAD</span>
+        <span class="ptool">BIM Documentation</span>
+        <span class="ptool">Floor Plans</span>
+        <span class="ptool">Sections &amp; Elevations</span>
+      </div>
+      <a href="https://www.linkedin.com/posts/activity-7412536921660252160-cSfd" target="_blank" style="color: var(--accent); text-decoration: none; font-family: var(--mono); font-size: 11px; display: inline-block; letter-spacing: 0.05em; border-bottom: 1px dashed var(--accent);">[ VIEW ON LINKEDIN ↗ ]</a>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="model-card" data-type="bim-pro">
+      <div class="slider-container">
+        <div class="model-type-badge">04 · PROFESSIONAL BIM WORK</div>
+        <img src="documents/3d_models/3d_bim_portfolio.webp" alt="Professional BIM Portfolio">
+      </div>
+      <div class="proj-type" style="margin-top: 0;">// CELEKOHR GMBH (GERMANY) | EUROPEAN PROJECTS</div>
+      <h3 class="proj-title" style="margin: 4px 0 12px 0; font-family: var(--sans); font-size: 18px; font-weight: bold; color: var(--text);">Professional BIM Model Portfolio</h3>
+      
+      <p style="font-size: 13px; color: var(--muted); margin-bottom: 12px;"><strong>Context:</strong> Selection of BIM architectural models developed during internship at Celekohr GmbH, Germany — handling European residential projects.</p>
+      
+      <ul style="list-style: none; padding-left: 0; display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: var(--muted); line-height: 1.5; margin-bottom: 16px; flex-grow: 1;">
+        <li style="position: relative; padding-left: 14px;"><span style="position: absolute; left: 0; color: var(--accent);">•</span> Developed 25+ detailed BIM models using ARCHICAD for European residential projects.</li>
+        <li style="position: relative; padding-left: 14px;"><span style="position: absolute; left: 0; color: var(--accent);">•</span> Executed 30+ systematic pre-checks monthly for model quality control and error prevention.</li>
+        <li style="position: relative; padding-left: 14px;"><span style="position: absolute; left: 0; color: var(--accent);">•</span> Collaborated remotely with international engineering teams on revisions and documentation.</li>
+      </ul>
+      
+      <div class="proj-tools" style="margin-bottom: 16px;">
+        <span class="ptool">ARCHICAD</span>
+        <span class="ptool">Revit</span>
+        <span class="ptool">AutoCAD</span>
+        <span class="ptool">Quality Control</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // 3D Slider state management
+  const sliderStates = {
+    proj1: { current: 0, total: 7, images: [
+      'documents/3d_models/3d_project1.webp',
+      'documents/3d_models/3d_p1_1.webp',
+      'documents/3d_models/3d_p1_2.webp',
+      'documents/3d_models/3d_p1_3.webp',
+      'documents/3d_models/3d_p1_4.webp',
+      'documents/3d_models/3d_p1_5.webp',
+      'documents/3d_models/3d_p1_6.webp'
+    ]},
+    proj2: { current: 0, total: 4, images: [
+      'documents/3d_models/3d_project2.webp',
+      'documents/3d_models/3d_p2_1.webp',
+      'documents/3d_models/3d_p2_2.webp',
+      'documents/3d_models/3d_p2_3.webp'
+    ]},
+    proj3: { current: 0, total: 5, images: [
+      'documents/3d_models/3d_project3.webp',
+      'documents/3d_models/3d_p3_1.webp',
+      'documents/3d_models/3d_p3_2.webp',
+      'documents/3d_models/3d_p3_3.webp',
+      'documents/3d_models/3d_p3_4.webp'
+    ]}
+  };
+
+  function moveSlider(projId, step) {
+    const state = sliderStates[projId];
+    if (!state) return;
+    state.current = (state.current + step + state.total) % state.total;
+    
+    const imgElement = document.getElementById(`${projId}-img`);
+    if (imgElement) {
+      imgElement.src = state.images[state.current];
+    }
+    
+    const counterElement = document.getElementById(`${projId}-counter`);
+    if (counterElement) {
+      counterElement.textContent = `${state.current + 1} / ${state.total}`;
+    }
+  }
+
+  function filter3D(category) {
+    const buttons = document.querySelectorAll('.filter-btn');
+    buttons.forEach(btn => {
+      if (btn.getAttribute('onclick').includes(category)) {
+        btn.classList.add('active');
+      } else {
+        btn.classList.remove('active');
+      }
+    });
+
+    const cards = document.querySelectorAll('.model-card');
+    cards.forEach(card => {
+      const type = card.getAttribute('data-type');
+      if (category === 'all' || type === category) {
+        card.style.display = 'flex';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
+</script>
+
 <!-- CONTACT -->
 <section id="contact">
-  <div class="section-label">// 11 — CONTACT</div>
+  <div class="section-label">// 12 — CONTACT</div>
   <div class="contact-inner">
     <div>
       <h2 class="contact-headline">LET'S <span>CONNECT</span></h2>
